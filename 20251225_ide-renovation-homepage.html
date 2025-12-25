@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>井出リフォーム - 地域密着40年の安心施工</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Company-designs recommended colors for 内装リフォーム */
+            --primary: #2C3E50;
+            --secondary: #3498DB;
+            --accent: #E67E22;
+            --text: #2C3E50;
+            --text-light: #666;
+            --border: #ECF0F1;
+            --bg-light: #FAFAFA;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            color: var(--text);
+            line-height: 1.8;
+            background: white;
+            font-size: 18px;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Header - Minimal */
+        .header {
+            background: white;
+            border-bottom: 1px solid var(--border);
+            padding: 1.2rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        .phone {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        /* Hero - Split Screen Design */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            background: var(--bg-light);
+        }
+
+        .hero-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            padding: 4rem 0;
+        }
+
+        .hero-label {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 0.5rem 1.2rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            font-size: 4.2rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            color: var(--primary);
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            font-weight: 400;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin: 3rem 0;
+            padding: 2rem 0;
+            border-top: 2px solid var(--border);
+            border-bottom: 2px solid var(--border);
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        .hero-stat-label {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 3rem;
+            align-items: center;
+        }
+
+        .cta-secondary {
+            background: transparent;
+            color: var(--primary);
+            padding: 1.3rem 3rem;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.2s;
+        }
+
+        .cta-secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .hero-visual {
+            position: relative;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .hero-grid-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            aspect-ratio: 1;
+        }
+
+        .hero-grid-item:first-child {
+            grid-row: span 2;
+            aspect-ratio: 1/1.5;
+        }
+
+        .hero-grid-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 1.5rem;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+        }
+
+        .hero-grid-tag {
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .hero-grid-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .hero-badge {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            z-index: 10;
+        }
+
+        .hero-badge-title {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            font-weight: 600;
+        }
+
+        .hero-badge-rating {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .hero-badge-stars {
+            color: var(--accent);
+            font-size: 1.2rem;
+            letter-spacing: 0.1em;
+        }
+
+        .hero-badge-score {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary);
+        }
+
+        .hero-badge-count {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-top: 0.3rem;
+        }
+
+        .cta-primary {
+            background: var(--accent);
+            color: white;
+            padding: 1.3rem 3.5rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 2rem;
+            transition: opacity 0.2s;
+            border-radius: 4px;
+        }
+
+        .cta-primary:hover {
+            opacity: 0.9;
+        }
+
+        /* Sections */
+        .section {
+            padding: 8rem 2rem;
+        }
+
+        .section-alt {
+            background: var(--bg-light);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            color: var(--primary);
+            letter-spacing: -0.02em;
+        }
+
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 5rem;
+        }
+
+        /* Services Grid - NEW */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+
+        .service-card {
+            background: white;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .service-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            overflow: hidden;
+        }
+
+        .service-content {
+            padding: 2rem;
+        }
+
+        .service-content h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .service-content p {
+            font-size: 1rem;
+            line-height: 1.9;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        .service-price {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-top: 1rem;
+        }
+
+        /* Trust Cards - Asymmetric layout */
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .trust-card {
+            padding: 0;
+        }
+
+        .trust-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .trust-card p {
+            font-size: 1rem;
+            line-height: 1.9;
+            color: var(--text-light);
+        }
+
+        .trust-number {
+            font-size: 3.5rem;
+            font-weight: 900;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Owner - Asymmetric with real photo */
+        .owner-content {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 5rem;
+            align-items: start;
+        }
+
+        .owner-image {
+            width: 100%;
+            aspect-ratio: 3/4;
+            overflow: hidden;
+            border-radius: 4px;
+        }
+
+        .owner-text h2 {
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin-bottom: 2rem;
+            color: var(--primary);
+            letter-spacing: -0.02em;
+        }
+
+        .owner-text p {
+            font-size: 1.05rem;
+            margin-bottom: 1.8rem;
+            line-height: 2;
+            color: var(--text-light);
+        }
+
+        .credentials {
+            background: white;
+            padding: 2rem;
+            margin-top: 3rem;
+            border-left: 4px solid var(--accent);
+            border: 1px solid var(--border);
+        }
+
+        .credentials h4 {
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: var(--primary);
+        }
+
+        .credentials ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .credentials li {
+            padding: 0.6rem 0;
+            color: var(--text-light);
+        }
+
+        .credentials li::before {
+            content: "✓ ";
+            color: var(--secondary);
+            font-weight: 700;
+            margin-right: 0.5rem;
+        }
+
+        /* Pricing - Minimal table */
+        .pricing-intro {
+            max-width: 800px;
+            margin-bottom: 4rem;
+        }
+
+        .pricing-intro p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--text-light);
+        }
+
+        .pricing-notice {
+            background: #FFF5E6;
+            border-left: 4px solid var(--accent);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            font-size: 1rem;
+        }
+
+        .pricing-guarantee {
+            background: #E8F4F8;
+            border-left: 4px solid var(--secondary);
+            padding: 2rem;
+            margin: 3rem 0;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--primary);
+        }
+
+        .pricing-table {
+            background: white;
+            border: 1px solid var(--border);
+            margin-top: 3rem;
+        }
+
+        .pricing-header {
+            background: var(--primary);
+            color: white;
+            padding: 1.2rem 2rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .pricing-row {
+            display: grid;
+            grid-template-columns: 2fr 1fr 3fr;
+            border-bottom: 1px solid var(--border);
+            padding: 1.8rem 2rem;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .pricing-row:last-child {
+            border-bottom: none;
+        }
+
+        .service-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .price {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--accent);
+            text-align: right;
+        }
+
+        .price-detail {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .price-note {
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background: var(--bg-light);
+            font-weight: 400;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        /* Portfolio - Real images */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .portfolio-item {
+            background: white;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .portfolio-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1px;
+            background: var(--border);
+        }
+
+        .portfolio-image {
+            aspect-ratio: 1;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-label {
+            position: absolute;
+            bottom: 0.8rem;
+            left: 0.8rem;
+            background: white;
+            padding: 0.4rem 0.8rem;
+            font-weight: 600;
+            font-size: 0.85rem;
+            border-radius: 2px;
+        }
+
+        .portfolio-info {
+            padding: 2rem;
+        }
+
+        .portfolio-info h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .portfolio-info p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 0.4rem;
+        }
+
+        /* Testimonials */
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .testimonial-card {
+            padding: 2rem;
+            background: white;
+            border: 1px solid var(--border);
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-avatar {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .testimonial-meta h4 {
+            font-weight: 700;
+            margin-bottom: 0.2rem;
+            font-size: 1rem;
+        }
+
+        .testimonial-meta p {
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            line-height: 1.9;
+            color: var(--text-light);
+        }
+
+        .rating {
+            color: var(--accent);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            letter-spacing: 0.1em;
+        }
+
+        /* Contact CTA */
+        .contact-cta-section {
+            padding: 8rem 2rem;
+            background: var(--primary);
+            color: white;
+        }
+
+        .contact-cta-section h2 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            letter-spacing: -0.02em;
+        }
+
+        .contact-cta-section > .container > p {
+            font-size: 1.2rem;
+            margin-bottom: 4rem;
+            opacity: 0.9;
+        }
+
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin: 4rem 0;
+        }
+
+        .contact-method {
+            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--accent);
+        }
+
+        .contact-method h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .contact-method .big-text {
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--accent);
+            margin: 1rem 0 1.5rem;
+        }
+
+        .contact-method p {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-final {
+            margin-top: 4rem;
+            padding: 2.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid var(--accent);
+        }
+
+        .contact-final p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1A252F;
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-section h4 {
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: white;
+        }
+
+        .footer-section p,
+        .footer-section ul {
+            font-size: 0.9rem;
+            line-height: 1.8;
+            opacity: 0.7;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.85rem;
+            opacity: 0.5;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .hero-stats {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+                padding: 1.5rem 0;
+            }
+
+            .hero-stat {
+                text-align: left;
+            }
+
+            .hero-cta-group {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .cta-primary,
+            .cta-secondary {
+                width: 100%;
+                text-align: center;
+            }
+
+            .hero-badge {
+                position: static;
+                margin-bottom: 2rem;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-grid-item:first-child {
+                grid-row: span 1;
+                aspect-ratio: 1;
+            }
+
+            .services-grid,
+            .trust-grid,
+            .portfolio-grid,
+            .testimonial-grid,
+            .contact-methods,
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+
+            .owner-content {
+                grid-template-columns: 1fr;
+            }
+
+            .pricing-row {
+                grid-template-columns: 1fr;
+                text-align: left;
+            }
+
+            .price {
+                text-align: left;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">井出リフォーム</div>
+            <a href="tel:0120-XXX-XXX" class="phone">0120-XXX-XXX</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <!-- Left Content -->
+            <div class="hero-content">
+                <span class="hero-label">地域密着40年の実績</span>
+                <h1>料金も、責任も。<br>すべて明確に。</h1>
+                <p class="hero-subtitle">「誰が来るか分からない」「後から高額請求されるのでは」そんな不安は必要ありません。井出が直接、最初から最後まで責任を持って対応します。</p>
+
+                <!-- Trust Stats -->
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">1,200+</span>
+                        <span class="hero-stat-label">施工実績</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">98%</span>
+                        <span class="hero-stat-label">満足度</span>
+                    </div>
+                    <div class="hero-stat">
+                        <span class="hero-stat-number">40年</span>
+                        <span class="hero-stat-label">信頼の実績</span>
+                    </div>
+                </div>
+
+                <!-- CTA Group -->
+                <div class="hero-cta-group">
+                    <a href="#contact" class="cta-primary">無料見積もり依頼</a>
+                    <a href="#pricing" class="cta-secondary">料金表を見る</a>
+                </div>
+            </div>
+
+            <!-- Right Visual Grid -->
+            <div class="hero-visual">
+                <!-- Trust Badge -->
+                <div class="hero-badge">
+                    <div class="hero-badge-title">お客様評価</div>
+                    <div class="hero-badge-rating">
+                        <span class="hero-badge-stars">★★★★★</span>
+                        <span class="hero-badge-score">4.9</span>
+                    </div>
+                    <div class="hero-badge-count">245件のレビュー</div>
+                </div>
+
+                <!-- Portfolio Grid -->
+                <div class="hero-grid">
+                    <div class="hero-grid-item">
+                        <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=400&h=600&fit=crop" alt="キッチンリフォーム">
+                        <div class="hero-grid-overlay">
+                            <div class="hero-grid-tag">キッチン</div>
+                            <div class="hero-grid-title">75万円〜</div>
+                        </div>
+                    </div>
+                    <div class="hero-grid-item">
+                        <img src="https://images.unsplash.com/photo-1604709177225-055f99402ea3?w=400&h=400&fit=crop" alt="トイレリフォーム">
+                        <div class="hero-grid-overlay">
+                            <div class="hero-grid-tag">トイレ</div>
+                            <div class="hero-grid-title">15万円〜</div>
+                        </div>
+                    </div>
+                    <div class="hero-grid-item">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&h=400&fit=crop" alt="浴室リフォーム">
+                        <div class="hero-grid-overlay">
+                            <div class="hero-grid-tag">浴室</div>
+                            <div class="hero-grid-title">80万円〜</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section - NEW -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">提供サービス</h2>
+            <p class="section-subtitle">お客様のライフスタイルに合わせた、最適なリフォームをご提案します</p>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1604709177225-055f99402ea3?w=600&h=450&fit=crop" alt="水回りリフォーム">
+                    </div>
+                    <div class="service-content">
+                        <h3>水回りリフォーム</h3>
+                        <p>キッチン・浴室・トイレ・洗面所など、毎日使う水回りを快適に。最新設備で暮らしやすさが変わります。</p>
+                        <p class="service-price">15万円〜</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?w=600&h=450&fit=crop" alt="内装リフォーム">
+                    </div>
+                    <div class="service-content">
+                        <h3>内装リフォーム</h3>
+                        <p>壁紙・フローリング・建具など、お部屋の雰囲気を一新。長年の経験で仕上がりに自信があります。</p>
+                        <p class="service-price">5万円〜</p>
+                    </div>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://images.unsplash.com/photo-1581858726788-75bc0f6a952d?w=600&h=450&fit=crop" alt="バリアフリー工事">
+                    </div>
+                    <div class="service-content">
+                        <h3>バリアフリー工事</h3>
+                        <p>段差解消・手すり設置など、将来を見据えた安心の住まいづくり。介護保険の活用もサポートします。</p>
+                        <p class="service-price">8万円〜</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">なぜ、井出リフォームが選ばれるのか</h2>
+
+            <div class="trust-grid">
+                <div class="trust-card">
+                    <div class="trust-number">01</div>
+                    <h3>井出本人が対応</h3>
+                    <p>下請けや外注は一切使いません。ご相談から施工、アフターフォローまで、井出が責任を持って対応します。「誰が来るか分からない」という不安はありません。</p>
+                </div>
+
+                <div class="trust-card">
+                    <div class="trust-number">02</div>
+                    <h3>料金は最初に全て提示</h3>
+                    <p>見積もり時に全ての費用を明示します。追加料金は一切ありません。「後から高額請求されるのでは」という心配は不要です。料金表は常に最新版に更新しています。</p>
+                </div>
+
+                <div class="trust-card">
+                    <div class="trust-number">03</div>
+                    <h3>地域密着40年の実績</h3>
+                    <p>この地域で40年間、誠実な施工を続けてきました。ご近所様からのご紹介も多数。「知らない業者は怖い」という方も、安心してご相談ください。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Owner Introduction -->
+    <section class="section section-alt">
+        <div class="container">
+            <div class="owner-content">
+                <div class="owner-image">
+                    <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=533&fit=crop" alt="代表 井出">
+                </div>
+                <div class="owner-text">
+                    <h2>代表 井出からのご挨拶</h2>
+                    <p>リフォーム業界には、残念ながら悪徳業者も存在します。「高額請求された」「工事が雑だった」そんな話を聞くたびに心が痛みます。</p>
+                    <p>私は40年間、この地域でお客様と向き合ってきました。<strong>「井出さんなら安心」</strong>と言っていただけることが、何よりの誇りです。</p>
+                    <p>料金は事前に全て明示します。追加費用は一切ありません。工事は私が責任を持って最後まで対応します。</p>
+                    <p><strong>不安なことがあれば、何でもお聞きください。納得いくまでご説明します。</strong></p>
+
+                    <div class="credentials">
+                        <h4>保有資格・実績</h4>
+                        <ul>
+                            <li>一級建築士（または該当資格）</li>
+                            <li>リフォーム施工実績 1,200件以上</li>
+                            <li>地域密着40年</li>
+                            <li>お客様満足度 98%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section class="section" id="pricing">
+        <div class="container">
+            <h2 class="section-title">料金表</h2>
+
+            <div class="pricing-intro">
+                <p>全ての料金を明確に表示しています。見積もり時にご提示する金額から、追加費用は一切発生しません。</p>
+
+                <div class="pricing-guarantee">
+                    <strong>【料金透明性の保証】</strong><br>
+                    当社では過去に料金表の不一致でお客様にご迷惑をおかけした経験から、料金管理を徹底しています。このページの料金表は常に最新版を掲載し、お見積もり時に確定した金額からの変更は一切ありません。
+                </div>
+
+                <div class="pricing-notice">
+                    <strong>重要なお知らせ</strong><br>
+                    この料金表は2025年12月時点のものです。材料費の変動により価格が変更になる場合がありますが、お見積もり時に確定した金額からの変更はありません。
+                </div>
+            </div>
+
+            <div class="pricing-table">
+                <div class="pricing-header">基本料金表(税込)</div>
+
+                <div class="pricing-row">
+                    <div class="service-name">トイレリフォーム</div>
+                    <div class="price">
+                        15万円〜
+                        <div class="price-detail">（標準工事込み）</div>
+                    </div>
+                    <div class="price-detail">便器交換、床・壁クロス張替え、配管工事含む</div>
+                </div>
+
+                <div class="pricing-row">
+                    <div class="service-name">キッチンリフォーム</div>
+                    <div class="price">
+                        60万円〜
+                        <div class="price-detail">（標準工事込み）</div>
+                    </div>
+                    <div class="price-detail">システムキッチン交換、給排水工事、電気工事含む</div>
+                </div>
+
+                <div class="pricing-row">
+                    <div class="service-name">浴室リフォーム</div>
+                    <div class="price">
+                        80万円〜
+                        <div class="price-detail">（標準工事込み）</div>
+                    </div>
+                    <div class="price-detail">ユニットバス交換、給排水工事、電気工事含む</div>
+                </div>
+
+                <div class="pricing-row">
+                    <div class="service-name">洗面所リフォーム</div>
+                    <div class="price">
+                        12万円〜
+                        <div class="price-detail">（標準工事込み）</div>
+                    </div>
+                    <div class="price-detail">洗面台交換、給排水工事、クロス張替え含む</div>
+                </div>
+
+                <div class="pricing-row">
+                    <div class="service-name">フローリング張替え</div>
+                    <div class="price">
+                        8万円〜
+                        <div class="price-detail">（6畳の場合）</div>
+                    </div>
+                    <div class="price-detail">既存床撤去、下地調整、フローリング施工含む</div>
+                </div>
+
+                <div class="pricing-row">
+                    <div class="service-name">壁紙（クロス）張替え</div>
+                    <div class="price">
+                        5万円〜
+                        <div class="price-detail">（6畳の場合）</div>
+                    </div>
+                    <div class="price-detail">既存クロス撤去、下地処理、新規クロス施工含む</div>
+                </div>
+            </div>
+
+            <div class="price-note">
+                <strong>※ 上記は標準的な工事の参考価格です。</strong><br>
+                現地調査の上、お客様のご要望に応じた正確なお見積もりをご提示します。<br>
+                見積もり後の追加費用は一切ありません。
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#contact" class="cta-primary">無料見積もりを依頼する</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">施工事例</h2>
+            <p class="section-subtitle">実際の施工事例をご覧ください。全て井出が責任施工した実績です。</p>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <div class="portfolio-images">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=400&h=400&fit=crop" alt="施工前トイレ">
+                            <div class="portfolio-label">施工前</div>
+                        </div>
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1604709177225-055f99402ea3?w=400&h=400&fit=crop" alt="施工後トイレ">
+                            <div class="portfolio-label">施工後</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>トイレリフォーム</h3>
+                        <p><strong>工事費用:</strong> 18万円（税込）</p>
+                        <p><strong>工期:</strong> 1日</p>
+                        <p>築30年の和式トイレを洋式に変更。段差解消でバリアフリー対応も実施。</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-images">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=400&fit=crop" alt="施工前キッチン">
+                            <div class="portfolio-label">施工前</div>
+                        </div>
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?w=400&h=400&fit=crop" alt="施工後キッチン">
+                            <div class="portfolio-label">施工後</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>キッチンリフォーム</h3>
+                        <p><strong>工事費用:</strong> 75万円（税込）</p>
+                        <p><strong>工期:</strong> 3日</p>
+                        <p>古いキッチンを最新のシステムキッチンに交換。収納力が大幅アップ。</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-images">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1552321554-5fefe8c9ef14?w=400&h=400&fit=crop" alt="施工前浴室">
+                            <div class="portfolio-label">施工前</div>
+                        </div>
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&h=400&fit=crop" alt="施工後浴室">
+                            <div class="portfolio-label">施工後</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>浴室リフォーム</h3>
+                        <p><strong>工事費用:</strong> 95万円（税込）</p>
+                        <p><strong>工期:</strong> 4日</p>
+                        <p>タイル張りの在来浴室を断熱性の高いユニットバスに変更。光熱費も削減。</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-images">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?w=400&h=400&fit=crop" alt="施工前リビング">
+                            <div class="portfolio-label">施工前</div>
+                        </div>
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1615529182904-14819c35db37?w=400&h=400&fit=crop" alt="施工後リビング">
+                            <div class="portfolio-label">施工後</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>リビングリフォーム</h3>
+                        <p><strong>工事費用:</strong> 45万円（税込）</p>
+                        <p><strong>工期:</strong> 5日</p>
+                        <p>壁紙とフローリングを一新。明るく開放的な空間に生まれ変わりました。</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-images">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1631889993959-41b4e9c6e3c5?w=400&h=400&fit=crop" alt="施工前洗面所">
+                            <div class="portfolio-label">施工前</div>
+                        </div>
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?w=400&h=400&fit=crop" alt="施工後洗面所">
+                            <div class="portfolio-label">施工後</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>洗面所リフォーム</h3>
+                        <p><strong>工事費用:</strong> 14万円（税込）</p>
+                        <p><strong>工期:</strong> 1日</p>
+                        <p>収納力のある洗面台に交換。朝の身支度がスムーズになったと好評です。</p>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="portfolio-images">
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1595514535116-9e0d2b6ccc2e?w=400&h=400&fit=crop" alt="施工前階段">
+                            <div class="portfolio-label">施工前</div>
+                        </div>
+                        <div class="portfolio-image">
+                            <img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?w=400&h=400&fit=crop" alt="施工後階段">
+                            <div class="portfolio-label">施工後</div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>バリアフリー工事</h3>
+                        <p><strong>工事費用:</strong> 22万円（税込）</p>
+                        <p><strong>工期:</strong> 2日</p>
+                        <p>階段・廊下・浴室に手すりを設置。安心して暮らせる住まいに。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">お客様の声</h2>
+            <p class="section-subtitle">実際にご利用いただいたお客様からの声をご紹介します</p>
+
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=56&h=56&fit=crop" alt="田中様">
+                        </div>
+                        <div class="testimonial-meta">
+                            <h4>田中様（70代・女性）</h4>
+                            <p>浴室リフォーム</p>
+                        </div>
+                    </div>
+                    <div class="rating">★★★★★</div>
+                    <p class="testimonial-text">「他社は見積もりが曖昧でしたが、井出さんは最初から全ての費用を明示してくれました。工事中も丁寧に説明してくれて、本当に安心できました。井出さんに頼んで良かったです。」</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=56&h=56&fit=crop" alt="佐藤様">
+                        </div>
+                        <div class="testimonial-meta">
+                            <h4>佐藤様（60代・男性）</h4>
+                            <p>キッチン・トイレリフォーム</p>
+                        </div>
+                    </div>
+                    <div class="rating">★★★★★</div>
+                    <p class="testimonial-text">「相談から完成まで、全て井出さん本人が対応してくれました。下請けに丸投げする業者が多い中、これは本当に安心です。仕上がりも完璧で、妻も大喜びです。」</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=56&h=56&fit=crop" alt="鈴木様">
+                        </div>
+                        <div class="testimonial-meta">
+                            <h4>鈴木様（65代・女性）</h4>
+                            <p>洗面所・フローリング</p>
+                        </div>
+                    </div>
+                    <div class="rating">★★★★★</div>
+                    <p class="testimonial-text">「一人暮らしの母のために依頼しました。井出さんは母にも分かりやすく説明してくれて、不安を全て解消してくれました。料金も明確で、追加費用が一切なかったのが良かったです。」</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="contact-cta-section" id="contact">
+        <div class="container">
+            <h2>まずは無料相談から</h2>
+            <p>「本当に大丈夫かな…」その不安、井出が直接お答えします</p>
+
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <h3>お電話でのご相談</h3>
+                    <div class="big-text">0120-XXX-XXX</div>
+                    <p>受付時間: 9:00〜18:00（年中無休）</p>
+                    <p>井出が直接対応します</p>
+                </div>
+
+                <div class="contact-method">
+                    <h3>メールでのご相談</h3>
+                    <div class="big-text" style="font-size: 1.3rem;">ide@reform.com</div>
+                    <p>24時間受付</p>
+                    <p>24時間以内に返信します</p>
+                </div>
+
+                <div class="contact-method">
+                    <h3>ご訪問でのご相談</h3>
+                    <div class="big-text" style="font-size: 1.3rem;">無料見積もり</div>
+                    <p>現地調査・見積もり無料</p>
+                    <p>井出が直接お伺いします</p>
+                </div>
+            </div>
+
+            <div class="contact-final">
+                <p>
+                    <strong>「料金が心配」「本当に信頼できるの?」</strong><br>
+                    そんな不安があって当然です。まずはお話だけでも結構です。<br>
+                    無理な営業は一切いたしません。納得いくまでご相談ください。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>井出リフォーム</h4>
+                <p>地域密着40年の信頼と実績</p>
+                <p>〒XXX-XXXX<br>東京都○○区○○ X-X-X</p>
+                <p>TEL: 0120-XXX-XXX</p>
+                <p>Email: ide@reform.com</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>営業時間</h4>
+                <p>月〜日: 9:00 - 18:00</p>
+                <p>年中無休</p>
+                <p>（年末年始を除く）</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>対応エリア</h4>
+                <p>東京都○○区を中心に</p>
+                <p>近隣エリア対応可能</p>
+                <p>※エリア外もご相談ください</p>
+            </div>
+
+            <div class="footer-section">
+                <h4>施工内容</h4>
+                <ul>
+                    <li>トイレリフォーム</li>
+                    <li>キッチンリフォーム</li>
+                    <li>浴室リフォーム</li>
+                    <li>洗面所リフォーム</li>
+                    <li>内装リフォーム</li>
+                    <li>バリアフリー工事</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 井出リフォーム All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
